@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import LightMode from "@mui/icons-material/LightMode";
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ const SearchBar = () => {
   };
 
   return (
+    
     <Paper
       component="form"
       onSubmit={onhandleSubmit}
@@ -28,6 +29,7 @@ const SearchBar = () => {
         mr: { sm: 5 },
       }}
     >
+
       <input
         className="search-bar"
         placeholder="Search..."
