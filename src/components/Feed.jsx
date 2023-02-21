@@ -30,13 +30,15 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: 1.5, color: "#fff" }}
+          sx={{ mt: 1.5, color: "inherit" }}
         >
           Copyright 2023
           <Link
             className="link"
             to="https://github.com/Yehya22"
             target="_blank"
+            sx={{ color: "inherit" }}
+
           >
             Yehya22
           </Link>
@@ -47,7 +49,6 @@ const Feed = () => {
           variant="h4"
           fontWeight="bold"
           mb={2}
-          sx={{ color: "white" }}
         >
           {selectedCategory} <span style={{ color: "#F31503" }}>Videos</span>
         </Typography>

@@ -9,7 +9,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 ::-webkit-scrollbar {
@@ -97,7 +97,7 @@ a {
   background: transparent;
   outline: none;
   border: none;
-  color: #fff;
+  color: inherit;
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
@@ -105,4 +105,8 @@ a {
 }
 .link:hover{
   background-color: #FC1503 !important;
+}
+
+input{
+  background-color:inherit
 }

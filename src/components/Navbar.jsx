@@ -3,7 +3,6 @@ import { Stack } from "@mui/system";
 import { Link } from "react-router-dom";
 import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
-import IconButton from '@mui/material/IconButton';
 
 const Navbar = () => (
   <Stack
@@ -12,7 +11,7 @@ const Navbar = () => (
     p={2}
     sx={{
       position: "sticky",
-      background: "#000",
+      background: "inherit",
       top: 0,
       justifyContent: "space-between",
     }}
