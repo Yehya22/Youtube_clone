@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import {
-  demoThumbnailUrl,
   demoVideoUrl,
   demoVideoTitle,
   demoChannelUrl,
   demoChannelTitle,
 } from "../utils/constants";
+
 const VideoCard = ({
   video: {
     id: { videoId },
     snippet,
   },
 }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <Card
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       sx={{
         width: {xs: "100%",sm:'358px', md: "320px"  },
         boxShadow: "none",
         borderRadius: 1.5,
-        
-        
+        transform: hovered ? "scale(1.10)" : "scale(1)",
+        transition: "transform 0.3s ease-in-out",
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>

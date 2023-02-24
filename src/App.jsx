@@ -51,6 +51,7 @@ const getDesignTokens = (mode) => ({
       ...(mode === "light" && {
         default: "#FFF",
         paper: "#fff",
+        
       }),
     },
     text: {
@@ -61,14 +62,6 @@ const getDesignTokens = (mode) => ({
       ...(mode === "light" && {
         primary: "rgba(0, 0, 0, 0.87)",
         secondary: "rgba(0, 0, 0, 0.6)",
-      }),
-    },
-    border: {
-      ...(mode === "light" && {
-        default: "#e1e1e1",
-      }),
-      ...(mode === "dark" && {
-        default: "rgba(0, 0, 0, 0.1)",
       }),
     },
   },
@@ -99,12 +92,11 @@ const App = () => {
         >
           <IconButton
             sx={{
-              position: "absolute",
-              top: 0,
-              right: 0,
+              top: 20,
+              right: 10,
               ml: 1,
               padding: "0.2rem 0.4rem",
-              border: "1px solid ",
+              border: "1px solid inherit ",
               borderRadius: "10px",
               p: 1.5,
             }}

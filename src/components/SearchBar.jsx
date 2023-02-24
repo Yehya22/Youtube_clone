@@ -24,7 +24,7 @@ const SearchBar = () => {
       sx={{
         backgroundColor:'inherit',
         borderRadius: 20,
-        border: "1px solid #e3e3e3",
+        border: "1px double #212529",
         pl: 2,
         boxShadow: "none",
         mr: { sm: 5 },
@@ -38,6 +38,7 @@ const SearchBar = () => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={onhandleSubmit}
+
       />
 
       <IconButton
