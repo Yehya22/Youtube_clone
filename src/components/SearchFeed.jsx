@@ -10,8 +10,12 @@ const SearchFeed = () => {
   const { searchTerm } = useParams();
 
   useEffect(() => {
-    FetchFromAPI(`search?part=snippet&q=${searchTerm}`)
-      .then((data) => setVideos(data.items))
+    try {
+      FetchFromAPI(`search?part=snippet&q=${searchTerm}`)
+        .then((data) => setVideos(data.items))
+    } catch (error) {
+      console.error(error);
+    }
   }, [searchTerm]);
 
   return (
