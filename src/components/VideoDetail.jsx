@@ -5,7 +5,6 @@ import { Typography, Box, Stack } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Videos, Loader,Comments } from "./";
 import { FetchFromAPI } from "../utils/fetchFromAPI";
-
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
@@ -33,7 +32,7 @@ const VideoDetail = () => {
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "relative", top: "px" }}>
+          <Box sx={{ width: "100%", position: "relative", top: "1px" }}>
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
@@ -65,7 +64,7 @@ const VideoDetail = () => {
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(likeCount).toLocaleString()}  likes 
+                  {parseInt(likeCount).toLocaleString()} likes 
                 </Typography>
               </Stack>
             </Stack>

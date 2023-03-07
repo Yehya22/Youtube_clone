@@ -3,17 +3,19 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Sidebar, Videos } from "../components";
 import { FetchFromAPI } from "../utils/fetchFromAPI";
+
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setVideos] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('ReactJS');
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    setVideos(null);
-
-    FetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setVideos(data.items)
-    );
+    if (selectedCategory) {
+      FetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+        setVideos(data.items)
+      );
+    }
   }, [selectedCategory]);
+
   return (
     <Stack sx={{ flexDirection: { sx: "coulmn", md: "row" } }}>
       <Box
@@ -38,21 +40,23 @@ const Feed = () => {
             to="https://github.com/Yehya22"
             target="_blank"
             sx={{ color: "inherit" }}
-
           >
             Yehya22
           </Link>
         </Typography>
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2}}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-        >
-          {selectedCategory} <span style={{ color: "#F31503" }}>Videos</span>
-        </Typography>
-        <Videos videos={videos} />
+
+
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+        {selectedCategory && (
+          <>
+            <Typography variant="h4" fontWeight="bold" mb={2}>
+              {selectedCategory}{" "}
+              <span style={{ color: "#F31503" }}>Videos</span>
+            </Typography>
+            <Videos videos={videos} />
+          </>
+        )}
       </Box>
     </Stack>
   );

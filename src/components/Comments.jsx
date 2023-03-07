@@ -20,7 +20,7 @@ const Comments = () => {
         sx={{
           mt: 3,
           backgroundColor:
-            theme.palette.mode === "dark" ? "inherit" : "#f8f9fa",
+            theme.palette.mode === "dark" ? "inherit" : "inherit",
         }}
       >
         {comments &&
@@ -31,12 +31,14 @@ const Comments = () => {
                 fontWeight="bold"
                 sx={{
                   color: theme.palette.mode === "dark" ? "#fff" : "#343a40",
+                  ml:1.5,
+                  mt:1
                 }}
               >
                 {comment.snippet.topLevelComment.snippet.authorDisplayName}
               </Typography>
 
-              <Typography variant="body1" sx={{ mb: 'auto',mt:2 }}>
+              <Typography variant="body1" sx={{ mb: 'auto',mt:2,ml:1.5 }}>
                 {comment.snippet.topLevelComment.snippet.textDisplay}
               </Typography>
               <Box
