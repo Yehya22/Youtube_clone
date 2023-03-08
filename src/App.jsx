@@ -87,13 +87,14 @@ const App = () => {
             height: "40px",
             alignItems: "center",
             backgroundColor: "inherit",
-            p: 0.5,
+            p: 1,
           }}
         >
           <IconButton
             sx={{
-              top: 20,
-              right: 10,
+              top: 2,
+              right: 0,
+              left:5,
               ml: 1,
               padding: "0.2rem 0.4rem",
               border: "1px solid inherit ",
