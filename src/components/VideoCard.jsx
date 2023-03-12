@@ -35,6 +35,7 @@ const VideoCard = ({
         borderRadius: 3.5,
         transform: hovered ? "scale(1.10)": "scale(1)",
         transition: "transform 0.3s ease-in-out",
+        zIndex:10
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
